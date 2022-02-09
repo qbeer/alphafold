@@ -1,5 +1,7 @@
 ## Changes
 
+* install nvidia-docker: https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker
+
 Line 68 in the Dockerfile needed to be changed from `==` to `>=`:
 
 ```bash
@@ -23,7 +25,7 @@ all the named entities below:
 ```bash
 export PATH=/usr/local/bin${PATH:+:${PATH}}
 export PATH=/usr/bin${PATH:+:${PATH}}
-export PATH=/home/abiricz/.local/bin${PATH:+:${PATH}}
+export PATH=/home/qbeer/.local/bin${PATH:+:${PATH}}
 
 export PATH=/usr/local/include${PATH:+:${PATH}}
 export PATH=/usr/include${PATH:+:${PATH}}
@@ -41,5 +43,5 @@ export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu${LD_LIBRARY_PATH:+:${LD_LIBRARY
 
 Also worth to mention, that the data folder should have read and write access by every user
 to make our life easier. THe permission made by the download script is not enough for docker
-to search the data with all the database tools.
+to search the data with all the database tools:
     * `hhsearch` failed, `JackHammer` worked (!)
